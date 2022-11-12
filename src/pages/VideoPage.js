@@ -52,10 +52,7 @@ export default function VideoPage() {
 
     const itemPlaylist = config.playlists[playlist]
     const item = itemPlaylist.find(item => item.id === String(id))
-
-    console.log(itemPlaylist)
-    console.log(item)
-
+    
     return (
         <>
             <Menu />
