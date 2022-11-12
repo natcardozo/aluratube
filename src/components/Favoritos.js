@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledFavoritos = styled.section`
@@ -25,7 +24,7 @@ const StyledFavoritos = styled.section`
     grid-template-columns: repeat(auto-fill, 150px);
     grid-auto-flow: column;
     grid-auto-columns: minmax(200px,1fr);
-    overflow-x: auto;
+    overflow-x: hidden;
     scroll-snap-type: x mandatory;
     a {
       scroll-snap-align: start;
@@ -35,6 +34,17 @@ const StyledFavoritos = styled.section`
         padding-right: 24px;
         color: ${({ theme }) => theme.textColorBase};
       }
+    }
+    &:hover {
+      overflow-x: auto;
+    }
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({ theme }) => theme.borderBase};
+      border-radius: 4px;
     }
   }
 `
@@ -46,7 +56,7 @@ export default function Favoritos({ data }) {
       <div className="favoritos-div">
         {data?.map((favorito) => (
           <a key={favorito.id} href={favorito.html_url}>
-            <img src={favorito.avatar_url} />
+            <img src={favorito.avatar_url} alt={favorito.login} />
             <span>
               @{favorito.login}
             </span>

@@ -27,7 +27,7 @@ export default function Header({ imagem, name, job, github }) {
       <Banner imagem={imagem} />
       <StyledHeader>
         <section className="user">
-          <img src={`https://github.com/${github}.png`} />
+          <img src={`https://github.com/${github}.png`} alt="Profile" />
           <div>
             <h2>
               {name}

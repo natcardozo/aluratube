@@ -47,10 +47,13 @@ export const StyledTimeline = styled.div`
         overflow-x: auto;
         scroll-snap-type: x mandatory;
       }
-      &::-webkit-slider-thumb {
-        width: 15px;
-        height: 15px;
-        border:1px solid black;
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.borderBase};
+        border-radius: 4px;
       }
     }
   }
@@ -76,7 +79,7 @@ export default function Timeline({ data, playlists, valorDaBusca }) {
                   }).map((video, idx) => {
                     return (
                       <a className="link" key={idx} href={`/video?${video.id}${playlistName}`}>
-                        <img src={video.thumb} />
+                        <img src={video.thumb} alt={video.title} />
                         <span>
                           {video.title}
                         </span>

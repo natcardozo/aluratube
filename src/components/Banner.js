@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledBanner = styled.div`
     margin-top: 50px;
-    width: 100vw;
+    width: 100%;
     height: 230px;
     img {
         width: 100%;
@@ -14,7 +14,7 @@ const StyledBanner = styled.div`
 export default function Banner({ imagem }) {
     return (
         <StyledBanner>
-            <img src={imagem} />
+            <img src={imagem} alt="Banner" />
         </StyledBanner>
     )
 }

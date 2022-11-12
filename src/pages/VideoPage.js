@@ -33,7 +33,7 @@ const StyledVideoPage = styled.div`
         .link {
             width: 100%;
             img {
-                width: 100%;
+                max-width: 100%;
             }
             span {
                 padding-top: 8px;
@@ -52,7 +52,7 @@ export default function VideoPage() {
 
     const itemPlaylist = config.playlists[playlist]
     const item = itemPlaylist.find(item => item.id === String(id))
-    
+
     return (
         <>
             <Menu />
@@ -62,18 +62,18 @@ export default function VideoPage() {
                     flexDirection: "column",
                     flex: 1,
                 }}>
-                    <iframe src={item.youtube_url}></iframe>
+                    <iframe src={item.youtube_url} title={item.title}></iframe>
                     <h2>{item.title}</h2>
                     <span>{item.release_date}</span>
                 </section>
                 <div>
+                    <h3 style={{marginBottom: "16px"}}>Vídeos relacionados</h3>
                     {itemPlaylist.filter(relItem => relItem.id !== id).map((rel) => (
                         <a key={rel.id} className="link" href={`/video?${rel.id}${playlist}`}>
-                            <img src={rel.thumb} />
+                            <img src={rel.thumb} alt={rel.title} />
                             <span>{rel.title}</span>
                         </a>
                     ))}
-                    Lista de vídeos
                 </div>
             </StyledVideoPage>
         </>
