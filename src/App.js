@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import HomePage from './pages/HomePage';
+import VideoPage from './pages/VideoPage';
+import { useContext } from "react";
 
-function App() {
+import { ThemeProvider } from "styled-components";
+
+import { CSSReset } from "./components/CSSReset";
+import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
+
+const theme = {
+  light: {
+    backgroundBase: "#f9f9f9",
+    backgroundLevel1: "#ffffff",
+    backgroundLevel2: "#f0f0f0",
+    borderBase: "#e5e5e5",
+    textColorBase: "#222222",
+  },
+  dark: {
+    backgroundBase: "#181818",
+    backgroundLevel1: "#202020",
+    backgroundLevel2: "#313131",
+    borderBase: "#383838",
+    textColorBase: "#FFFFFF",
+  }
+};
+
+function ProviderWrapper(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ColorModeProvider initialMode={"light"}>
+      {props.children}
+    </ColorModeProvider>
+  )
 }
 
-export default App;
+function MyApp() {
+  const contexto = useContext(ColorModeContext);
+
+  return (
+    <ThemeProvider theme={theme[contexto.mode]}>
+      <CSSReset />
+      {window.location.pathname === "/" ? <HomePage /> : window.location.pathname === "/video" ? <VideoPage /> : <>404 Page not found</>}
+      
+    </ThemeProvider>
+  )
+}
+
+export default function App(props) {
+  return (
+    <ProviderWrapper>
+      <MyApp />
+    </ProviderWrapper>
+  )
+}
+
+// function Apps() {
+//   return (
+//     <div className="App">
+//       {window.location.pathname === "/" ? <HomePage /> : <></>}
+      
+//     </div>
+//   );
+// }

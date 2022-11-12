@@ -1,0 +1,183 @@
+{
+  "name": "Nathalia Cardozo",
+  "job": "Junior Web Developer",
+  "github": "natcardozo",
+  "banner": "https://cdn.londonandpartners.com/-/media/images/london/partners/about-us/tower-bridge-1920.jpg?mw=1920&hash=DAA4726A1415C27262B076CC9C99E9768EDF2CEE",
+  "playlists": {
+    "jogos": [
+        {
+          "title": "Frostpunk - Neve e Steak tartare",
+          "id": "1001",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/QsqatJxAUtk",
+          "thumb": "https://img.youtube.com/vi/QsqatJxAUtk/hqdefault.jpg"
+        },
+        {
+          "title": "Remakes MAIS IMPORTANTES de Pokémon - Retrospectiva Pokémon Fire Red e Leaf Green",
+          "id": "1002",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/O8jtAyPuhNg",
+          "thumb": "https://img.youtube.com/vi/O8jtAyPuhNg/hqdefault.jpg"
+        },
+        {
+          "title": "Gas Station Simulator - 8 dias sem dormir!",
+          "id": "1003",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/R1d0DyRDG_Q",
+          "thumb": "https://img.youtube.com/vi/R1d0DyRDG_Q/hqdefault.jpg"
+        },
+        {
+          "title": "Gartic Phone - Não assista a esse NerdPlayer!",
+          "id": "1004",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/0oJQUs5oRiM",
+          "thumb": "https://img.youtube.com/vi/0oJQUs5oRiM/hqdefault.jpg"
+        },
+        {
+          "title": "Netdecking Estraga o Magic?",
+          "id": "1005",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/dXihyhYEsEc",
+          "thumb": "https://img.youtube.com/vi/dXihyhYEsEc/hqdefault.jpg"
+        },
+        {
+          "title": "Cities: Skylines - EPCOTAB, o futuro de Saint Laurrent",
+          "id": "1006",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/zybKHMgLCWU",
+          "thumb": "https://img.youtube.com/vi/zybKHMgLCWU/hqdefault.jpg"
+        },
+        {
+          "title": "We Were Here Together - Os Enigmas deste Mundo",
+          "id": "1007",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/UKgQsrHUG40",
+          "thumb": "https://img.youtube.com/vi/UKgQsrHUG40/hqdefault.jpg"
+        },
+        {
+          "title": "Microsoft Flight Simulator - Top Gun: Oceania - Missão RJ!",
+          "id": "1008",
+          "release_date": "10 de novembro de 2021",
+          "youtube_url": "https://www.youtube.com/embed/n3TneUb5c-w",
+          "thumb": "https://img.youtube.com/vi/n3TneUb5c-w/hqdefault.jpg"
+        }
+      ],
+    "front-end": [
+      {
+        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
+        "id": "1009",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://youtube.com/embed/jOAU81jdi-c",
+        "thumb": "https://img.youtube.com/vi/jOAU81jdi-c/hqdefault.jpg"
+      },
+      {
+        "title": "Jogo com JavaScript #01: Criando um Flappy Bird do ZERO!!!",
+        "id": "1010",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/llF6vD-RljE",
+        "thumb": "https://img.youtube.com/vi/llF6vD-RljE/hqdefault.jpg"
+      },
+      {
+        "title": "A Primeira Aula de Flutter Que Todo Mundo Deveria Ter",
+        "id": "1011",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/J4BVaXkwmM8",
+        "thumb": "https://img.youtube.com/vi/J4BVaXkwmM8/hqdefault.jpg"
+      },
+      {
+        "title": "O QUE SÃO FRAMEWORKS E BIBLIOTECAS? QUAIS AS DIFERENÇAS?",
+        "id": "1012",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/dp0zB4n3MUs",
+        "thumb": "https://img.youtube.com/vi/dp0zB4n3MUs/hqdefault.jpg"
+      },
+      {
+        "title": "Angular (O Vídeo que Você Precisava para Começar no Framework) // Dicionário do Programador",
+        "id": "1013",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/Yf0rC7dERjg",
+        "thumb": "https://img.youtube.com/vi/Yf0rC7dERjg/hqdefault.jpg"
+      },
+      {
+        "title": "Como Foi Programado um App Que Faz Mágica",
+        "id": "1014",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/I36seuWUe5s",
+        "thumb": "https://img.youtube.com/vi/I36seuWUe5s/hqdefault.jpg"
+      },
+      {
+        "title": "O que todo iniciante em Front End deveria aprender | Como manipular arrays e objetos em JavaScript",
+        "id": "1015",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/yS7AcF-xRUg",
+        "thumb": "https://img.youtube.com/vi/yS7AcF-xRUg/hqdefault.jpg"
+      },
+      {
+        "title": "5 Erros Históricos do CSS",
+        "id": "1016",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/HNjkqONzGS0",
+        "thumb": "https://img.youtube.com/vi/HNjkqONzGS0/hqdefault.jpg"
+      },
+      {
+        "title": "Deploy de Front End ATUALIZADO! | O que eu uso para hospedagem de Front End",
+        "id": "1017",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/d9c0r-J6CdM",
+        "thumb": "https://img.youtube.com/vi/d9c0r-J6CdM/hqdefault.jpg"
+      }
+    ],
+    "back-end": [
+      {
+        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
+        "id": "1018",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/dvd3pNYh7So",
+        "thumb": "https://img.youtube.com/vi/dvd3pNYh7So/hqdefault.jpg"
+      },
+      {
+        "title": "Node JS: Construindo CRUDs com file system focando em serialização e JSON",
+        "id": "1019",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/8q36rNS5yVo",
+        "thumb": "https://img.youtube.com/vi/8q36rNS5yVo/hqdefault.jpg"
+      },
+      
+      {
+        "title": "O que é o Java? #HipstersPontoTube",
+        "id": "1020",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/90NcVNsKGik",
+        "thumb": "https://img.youtube.com/vi/90NcVNsKGik/hqdefault.jpg"
+      },
+      {
+        "title": "O que é Machine Learning? #HipstersPontoTube",
+        "id": "1021",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/Iuz_jc96bQk",
+        "thumb": "https://img.youtube.com/vi/Iuz_jc96bQk/hqdefault.jpg"
+      },
+      {
+        "title": "A MELHOR linguagem de programação com Fabio Akita | #HipstersPontoTube",
+        "id": "1022",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/imB0QVoNrGc",
+        "thumb": "https://img.youtube.com/vi/imB0QVoNrGc/hqdefault.jpg"
+      },
+      {
+        "title": "Top 5 libs que todo aplicativo Android deve ter com Alex Felipe | #HipstersPontoTube",
+        "id": "1023",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/ldRbnpy-qQs",
+        "thumb": "https://img.youtube.com/vi/ldRbnpy-qQs/hqdefault.jpg"
+      },
+      {
+        "title": "O que é o C#? #HipstersPontoTube",
+        "id": "1024",
+        "release_date": "10 de novembro de 2021",
+        "youtube_url": "https://www.youtube.com/embed/0JWMVc1CqpA",
+        "thumb": "https://img.youtube.com/vi/0JWMVc1CqpA/hqdefault.jpg"
+      }
+    ]
+  }
+}
