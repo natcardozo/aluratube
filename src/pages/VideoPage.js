@@ -6,7 +6,7 @@ const StyledVideoPage = styled.div`
     margin-top: 50px;
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 100vw;
     section {
         width: 75%;
         padding: 56px 150px;

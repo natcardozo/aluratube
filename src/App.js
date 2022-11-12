@@ -26,7 +26,7 @@ const theme = {
 
 function ProviderWrapper(props) {
   return (
-    <ColorModeProvider initialMode={"light"}>
+    <ColorModeProvider initialMode={localStorage.getItem("USER_THEME") ? localStorage.getItem("USER_THEME") : "light"}>
       {props.children}
     </ColorModeProvider>
   )
