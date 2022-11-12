@@ -71,7 +71,7 @@ export default function VideoPage() {
                 </section>
                 <div>
                     {itemPlaylist.filter(relItem => relItem.id !== id).map((rel) => (
-                        <a className="link" href={`/video?${rel.id}${playlist}`}>
+                        <a key={rel.id} className="link" href={`/video?${rel.id}${playlist}`}>
                             <img src={rel.thumb} />
                             <span>{rel.title}</span>
                         </a>
