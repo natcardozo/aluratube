@@ -7,7 +7,7 @@ const StyledVideoPage = styled.div`
     display: flex;
     justify-content: space-around;
     width: 100vw;
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 800px) {
         flex-direction: column;
     }
     section {
@@ -25,9 +25,14 @@ const StyledVideoPage = styled.div`
         span {
             margin-top: 8px;
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 800px) {
             width: 100%;
             padding: 56px 0;
+            iframe {
+                height: 450px;
+            }
+        }
+        @media screen and (max-width: 480px) {
             iframe {
                 height: 250px;
             }
@@ -43,7 +48,7 @@ const StyledVideoPage = styled.div`
         .link {
             width: 100%;
             img {
-                max-width: 100%;
+                width: 100%;
             }
             span {
                 padding-top: 8px;
@@ -53,7 +58,7 @@ const StyledVideoPage = styled.div`
                 color: ${({ theme }) => theme.textColorBase};
             }
         }
-        @media screen and (max-width: 480px) {
+        @media screen and (max-width: 780px) {
             width: 100%;
         }
     }

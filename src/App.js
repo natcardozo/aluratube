@@ -6,6 +6,7 @@ import { ThemeProvider } from "styled-components";
 
 import { CSSReset } from "./components/CSSReset";
 import ColorModeProvider, { ColorModeContext } from "../src/components/Menu/components/ColorMode";
+import RegisterVideo from './components/RegisterVideo';
 
 const theme = {
   light: {
@@ -39,7 +40,7 @@ function MyApp() {
     <ThemeProvider theme={theme[contexto.mode]}>
       <CSSReset />
       {window.location.pathname === "/" ? <HomePage /> : window.location.pathname === "/video" ? <VideoPage /> : <>404 Page not found</>}
-      
+      <RegisterVideo />
     </ThemeProvider>
   )
 }
