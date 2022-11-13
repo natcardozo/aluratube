@@ -23,7 +23,7 @@ export default function RegisterVideo() {
     const formCadastro = useForm({
         initialValues: {
             titulo: "",
-            url: ""
+            youtube_url: ""
         }
     });
     const [formVisivel, setFormVisivel] = useState(false);
@@ -41,18 +41,20 @@ export default function RegisterVideo() {
                     formCadastro.clearForm()
                 }}>
                     <div>
-                        <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>x</button>
+                        <button type="button" className="close-modal" onClick={() => setFormVisivel(false)}>&#128473;</button>
                         <input 
                             placeholder="Título do vídeo" 
                             name="titulo"
                             value={formCadastro.values.titulo} 
                             onChange={formCadastro.handleChange}
+                            minLength={3}
                         />
                         <input 
-                            placeholder="URL" 
+                            placeholder="Youtube URL" 
                             name="url"
                             value={formCadastro.values.url} 
                             onChange={formCadastro.handleChange}
+                            pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
                         />
                         <button type="submit">
                             Cadastrar
