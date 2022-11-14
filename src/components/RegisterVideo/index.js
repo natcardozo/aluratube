@@ -33,10 +33,14 @@ export default function RegisterVideo() {
         initialValues: {
             titulo: "",
             url: "",
-            playlist: "gerais"
+            playlist: "selecione"
         }
     });
     const [formVisivel, setFormVisivel] = useState(false);
+    const buttonDisabled = formCadastro.values.titulo === "" 
+        ? true : formCadastro.values.url === "" 
+        ? true : formCadastro.values.playlist === "selecione"
+        ? true : false
 
     return (
         <StyledRegisterVideo>
@@ -77,14 +81,13 @@ export default function RegisterVideo() {
                             onChange={formCadastro.handleChange}
                             pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
                         />
-                        <select name="playlist" onChange={formCadastro.handleChange} defaultValue="gerais">
+                        <select name="playlist" onChange={formCadastro.handleChange} defaultValue="selecione">
+                            <option value="selecione">Selecione uma categoria</option>
                             <option value="gerais">Gerais</option>
                             <option value="jogos">Jogos</option>
                             <option value="musica">Música</option>
                         </select>
-                        <button type="submit">
-                            Cadastrar
-                        </button>
+                        {buttonDisabled ? null : <button type="submit">Cadastrar</button>}
                     </div>
                 </form>
             }
