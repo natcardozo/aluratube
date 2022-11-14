@@ -1,5 +1,4 @@
 import Menu from "../components/Menu";
-import config from "../config.json";
 import styled from "styled-components";
 import { videoService } from "../services/videoService";
 import { useEffect, useState } from "react";
@@ -85,13 +84,7 @@ export default function VideoPage() {
             setItem(res.data.find(item => item.id === id))
             setRecomendados(res.data)
         })
-    }, [])
-
-    console.log(item.url)
-    // const playlist = window.location.search.replace(id, "").replace("?", "")
-
-    // const itemPlaylist = config.playlists[playlist]
-    // const item = itemPlaylist.find(item => item.id === String(id))
+    }, []) // eslint-disable-line
 
     return (
         <>
