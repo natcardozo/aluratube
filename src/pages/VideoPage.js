@@ -65,6 +65,17 @@ const StyledVideoPage = styled.div`
     }
 `
 
+//format date and time from created_at
+const formatDateTime = (date) => {
+    const newDate = new Date(date);
+    const day = newDate.getDate();
+    const month = newDate.getMonth() + 1;
+    const year = newDate.getFullYear();
+    const hours = newDate.getHours();
+    const minutes = newDate.getMinutes();
+    return `Enviado ${day}/${month}/${year} às ${hours}:${minutes}`;
+}
+
 //get embed url from youtube url
 const getEmbedUrl = (url) => {
     const videoId = url?.split("v=")[1];
@@ -97,7 +108,7 @@ export default function VideoPage() {
                 }}>
                     <iframe src={getEmbedUrl(item.url)} title={item.name}></iframe>
                     <h2>{item.name}</h2>
-                    <span>{item.created_at}</span>
+                    <span>{formatDateTime(item.created_at)}</span>
                 </section>
                 <div>
                     <h3 style={{marginBottom: "16px"}}>Vídeos relacionados</h3>
