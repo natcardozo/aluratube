@@ -77,7 +77,7 @@ export default function RegisterVideo() {
                             onChange={formCadastro.handleChange}
                             pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
                         />
-                        <select onChange={formCadastro.handleChange} defaultValue="gerais">
+                        <select name="playlist" onChange={formCadastro.handleChange} defaultValue="gerais">
                             <option value="gerais">Gerais</option>
                             <option value="jogos">Jogos</option>
                             <option value="musica">Música</option>
