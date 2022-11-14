@@ -1,3 +1,4 @@
+import { createClient } from "@supabase/supabase-js";
 import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 
@@ -19,15 +20,23 @@ function useForm(props) {
     }
 }
 
+const PROJECT_URL = "https://ricllmcxzquhzivpglvg.supabase.co";
+const PROJECT_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJpY2xsbWN4enF1aHppdnBnbHZnIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgzNzcyMzMsImV4cCI6MTk4Mzk1MzIzM30.6qlS6FIzHH8ZKBfLOZRjsP05HnUz2EdVLZ-h6XFUc8M";
+const supabase = createClient(PROJECT_URL, PROJECT_KEY);
+
+const getThumbnail = (url) => {
+    return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`;
+}
+
 export default function RegisterVideo() {
     const formCadastro = useForm({
         initialValues: {
             titulo: "",
-            youtube_url: ""
+            url: "",
+            playlist: "gerais"
         }
     });
     const [formVisivel, setFormVisivel] = useState(false);
-    
 
     return (
         <StyledRegisterVideo>
@@ -36,6 +45,18 @@ export default function RegisterVideo() {
                 <form onSubmit={(e) => {
                     e.preventDefault()
                     console.log(formCadastro.values)
+                    supabase.from("videos").insert({
+                        name: formCadastro.values.titulo,
+                        url: formCadastro.values.url,
+                        thumb: getThumbnail(formCadastro.values.url),
+                        playlist: formCadastro.values.playlist
+                    })
+                    .then((res) => {
+                        console.log(res.data)
+                    })
+                    .catch((err) => {
+                        console.error(err)
+                    })
 
                     setFormVisivel(false)
                     formCadastro.clearForm()
@@ -56,6 +77,11 @@ export default function RegisterVideo() {
                             onChange={formCadastro.handleChange}
                             pattern="^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$"
                         />
+                        <select onChange={formCadastro.handleChange} defaultValue="gerais">
+                            <option value="gerais">Gerais</option>
+                            <option value="jogos">Jogos</option>
+                            <option value="musica">Música</option>
+                        </select>
                         <button type="submit">
                             Cadastrar
                         </button>

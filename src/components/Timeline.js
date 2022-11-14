@@ -73,15 +73,15 @@ export default function Timeline({ data, playlists, valorDaBusca }) {
               <div>
                 {videos.filter(
                   (video) => {
-                    const titleNormalized = video.title.toLowerCase();
+                    const titleNormalized = video.name.toLowerCase();
                     const valorDaBuscaNormalized = valorDaBusca.toLowerCase();
                     return titleNormalized.includes(valorDaBuscaNormalized)
                   }).map((video, idx) => {
                     return (
                       <a className="link" key={idx} href={`/video?${video.id}${playlistName}`}>
-                        <img src={video.thumb} alt={video.title} />
+                        <img src={video.thumb} alt={video.name} />
                         <span>
-                          {video.title}
+                          {video.name}
                         </span>
                       </a>
                     )

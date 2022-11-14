@@ -1,6 +1,8 @@
 import Menu from "../components/Menu";
 import config from "../config.json";
 import styled from "styled-components";
+import { videoService } from "../services/videoService";
+import { useEffect, useState } from "react";
 
 const StyledVideoPage = styled.div`
     margin-top: 50px;
@@ -64,12 +66,32 @@ const StyledVideoPage = styled.div`
     }
 `
 
-export default function VideoPage() {
-    const id = window.location.search.replace(/\D/g, "");
-    const playlist = window.location.search.replace(id, "").replace("?", "")
+//get embed url from youtube url
+const getEmbedUrl = (url) => {
+    const videoId = url?.split("v=")[1];
+    return `https://www.youtube.com/embed/${videoId}`;
+};
 
-    const itemPlaylist = config.playlists[playlist]
-    const item = itemPlaylist.find(item => item.id === String(id))
+export default function VideoPage() {
+    const service = videoService();
+    const id = parseInt(window.location.search.replace(/\D/g, ""));
+
+    const [item, setItem] = useState({})
+    const [recomendados, setRecomendados] = useState([])
+    
+    useEffect(() => {
+        service.getAllVideos()
+        .then((res) => {
+            setItem(res.data.find(item => item.id === id))
+            setRecomendados(res.data)
+        })
+    }, [])
+
+    console.log(item.url)
+    // const playlist = window.location.search.replace(id, "").replace("?", "")
+
+    // const itemPlaylist = config.playlists[playlist]
+    // const item = itemPlaylist.find(item => item.id === String(id))
 
     return (
         <>
@@ -80,16 +102,16 @@ export default function VideoPage() {
                     flexDirection: "column",
                     flex: 1,
                 }}>
-                    <iframe src={item.youtube_url} title={item.title}></iframe>
-                    <h2>{item.title}</h2>
-                    <span>{item.release_date}</span>
+                    <iframe src={getEmbedUrl(item.url)} title={item.name}></iframe>
+                    <h2>{item.name}</h2>
+                    <span>{item.created_at}</span>
                 </section>
                 <div>
                     <h3 style={{marginBottom: "16px"}}>Vídeos relacionados</h3>
-                    {itemPlaylist.filter(relItem => relItem.id !== id).map((rel) => (
-                        <a key={rel.id} className="link" href={`/video?${rel.id}${playlist}`}>
-                            <img src={rel.thumb} alt={rel.title} />
-                            <span>{rel.title}</span>
+                    {recomendados.filter(recomendado => recomendado.id !== id).map((rel) => (
+                        <a key={rel.id} className="link" href={`/video?${rel.id}${rel.playlist}`}>
+                            <img src={rel.thumb} alt={rel.name} />
+                            <span>{rel.name}</span>
                         </a>
                     ))}
                 </div>
